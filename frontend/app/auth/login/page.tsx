@@ -13,8 +13,8 @@ export default function Page() {
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           alt="Sound Nest"
-          src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-          className="mx-auto h-10 w-auto"
+          src="https://raw.githubusercontent.com/Joanna-Khek/sound-nest/refs/heads/main/frontend/public/sound_nest_logo_2.svg"
+          className="mx-auto h-30 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
           Sign in to your account
