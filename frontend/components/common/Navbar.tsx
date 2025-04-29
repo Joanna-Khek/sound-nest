@@ -12,6 +12,7 @@ import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { logout as setLogout } from "@/redux/features/authSlice";
 import { useLogoutMutation } from "@/redux/features/authApiSlice";
 import { NavLink } from "@/components/common";
+import Link from "next/link";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -96,9 +97,13 @@ export default function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <NavLink href="/" isBanner>
-                Sound Nest
-              </NavLink>
+              <Link href="/">
+                <img
+                  src="https://raw.githubusercontent.com/Joanna-Khek/sound-nest/refs/heads/main/frontend/public/sound_nest_logo_light.svg"
+                  alt="Sound Nest Logo"
+                  className="h-10 w-auto"
+                />
+              </Link>
             </div>
 
             <div className="hidden sm:ml-6 sm:block">
