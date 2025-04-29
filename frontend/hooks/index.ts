@@ -7,3 +7,4 @@ export { default as usePredictAttributes } from "./use-predict-attributes";
 export { default as useSongRecommender } from "./use-song-recommender";
 export { default as useSaveSongs } from "./use-save-songs";
 export { default as useUpdateTrackRatings } from "./update-track-ratings";
+export { default as useDeleteSavedSong } from "./use-delete-saved-songs";
