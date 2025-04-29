@@ -31,9 +31,34 @@ export default function useRegister() {
         toast.success("Please check email to verify account");
         router.push("/auth/login");
       })
-      .catch(() => {
-        // Handle error
-        toast.error("Failed to register account");
+      .catch((error) => {
+        if (error?.data) {
+          // Handle specific field errors
+          if (error.data.email) {
+            const emailError = error.data.email[0];
+            if (emailError.includes("email address already exists")) {
+              toast.error("Account exists");
+            } else {
+              toast.error(`Email error: ${emailError}`);
+            }
+          } else if (error.data.re_password) {
+            toast.error(
+              `Password confirmation error: ${error.data.re_password[0]}`
+            );
+          } else if (error.data.password) {
+            toast.error(`Password error: ${error.data.password[0]}`);
+          } else if (error.data.first_name) {
+            toast.error(`First name error: ${error.data.first_name[0]}`);
+          } else if (error.data.last_name) {
+            toast.error(`Last name error: ${error.data.last_name[0]}`);
+          } else if (error.data.non_field_errors) {
+            toast.error(error.data.non_field_errors[0]);
+          } else {
+            toast.error("Failed to register account");
+          }
+        } else {
+          toast.error("Failed to register account");
+        }
       });
   };
 
