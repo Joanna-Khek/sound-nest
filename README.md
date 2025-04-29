@@ -1,5 +1,7 @@
 # Sound Nest
 
+![logo](https://raw.githubusercontent.com/Joanna-Khek/sound-nest/refs/heads/main/frontend/public/sound_nest_logo_1.svg)
+
 Sound Nest is an enhanced version of my earlier project, Rhythmix, featuring several key improvements:
 
 - **Next.js** for server-side rendering, significantly improving application speed and performance.
