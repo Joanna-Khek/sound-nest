@@ -3,11 +3,12 @@
 import { useEffect } from "react";
 import { Spinner } from "@/components/common";
 import { StarRating, TableList } from "@/components/common";
-import { useUpdateTrackRatings } from "@/hooks";
+import { useUpdateTrackRatings, useDeleteSavedSong } from "@/hooks";
 import {
   useSongsQuery,
   useRetrieveUserQuery,
 } from "@/redux/features/authApiSlice";
+import { MdDelete } from "react-icons/md";
 
 export default function Page() {
   const {
@@ -59,6 +60,26 @@ export default function Page() {
               onChange={(newValue) => updateTrackRating(newValue)} // Pass the updated rating
             />
           </div>
+        );
+      },
+    },
+    {
+      id: "delete",
+      label: "Delete",
+      render: (_value: string, row: any) => {
+        const { handleDelete } = useDeleteSavedSong({ songId: row.id });
+
+        return (
+          <button
+            onClick={async () => {
+              await handleDelete();
+              await refetchSongs(); // After deleting, refetch the songs
+            }}
+            title="Delete Songs"
+            className="cursor-pointer"
+          >
+            <MdDelete className="w-5 h-5 text-red-500" />
+          </button>
         );
       },
     },

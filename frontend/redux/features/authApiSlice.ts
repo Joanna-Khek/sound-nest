@@ -121,6 +121,14 @@ const authApiSlice = apiSlice.injectEndpoints({
         body: { track_rating },
       }),
     }),
+
+    // useDeleteSavedSongMutation
+    deleteSavedSong: builder.mutation({
+      query: (song_id) => ({
+        url: `saved-songs/${song_id}/`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
@@ -139,4 +147,5 @@ export const {
   useResetPasswordConfirmMutation,
   useSaveSongsMutation,
   useSaveTrackRatingMutation,
+  useDeleteSavedSongMutation,
 } = authApiSlice;
