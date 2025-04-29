@@ -7,6 +7,7 @@ Sound Nest is an enhanced version of my earlier project, [Rhythmix](https://gith
 - **Next.js** for server-side rendering, significantly improving application speed and performance.
 - **Djoser** for robust and efficient user authentication.
 - **Redux** for scalable and centralized state management.
+- **TypeScript** for improved type safety, code maintainability, and developer experience.
 
 The web application is built with a Django backend and a React frontend (leveraging Next.js and Redux). The LLM (Large Language Model) predictions are served through a separate FastAPI backend ([repo](https://github.com/Joanna-Khek/rhythmix-model)) and seamlessly integrated into the frontend.
 
