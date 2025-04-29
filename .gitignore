@@ -110,6 +110,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+.env.local
 
 # End of https://www.toptal.com/developers/gitignore/api/python
